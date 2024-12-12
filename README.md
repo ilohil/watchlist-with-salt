@@ -40,18 +40,18 @@ This module performs the following tasks:
 
        $ sudo salt-call --local state.apply mariadb
        $ sudo salt-call --local state.apply phpmyadmin
+ 
+   Or you can run them on minion:
 
-  Or you can run them on minion:
-
-      $ sudo salt '{your minion}' state.apply mariadb
-      $ sudo salt '{your minion}' state.apply phpmyadmin
+       $ sudo salt '{your minion}' state.apply mariadb
+       $ sudo salt '{your minion}' state.apply phpmyadmin
 
 5. After succesful runs you should be able to login to the database using command line or user interface. To use the command line:
 
        $ mariadb -u {your username} -p'{your password}'
 
-  If you want to use the user interface, go to the following address in your browser:
-
-    http://localhost/phpmyadmin/
-    OR
-    http://{your IP-address}/phpmyadmin/
+   If you want to use the user interface, go to the following address in your browser:
+    
+        http://localhost/phpmyadmin/
+        OR
+        http://{your IP-address}/phpmyadmin/
