@@ -6,8 +6,8 @@ admin:
 
 set_root_password:
   cmd.run:
-    - name: mariadb -u root -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('{{ root_password }}')"
-    - unless: mariadb -u root -p'{{ root_password }}' -e "SELECT User FROM mysql.user WHERE User='root';" | grep -i "root"
+    - name: mariadb -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('{{ root_password }}');"
+    - onlyif: mariadb -u root -e "SELECT plugin FROM mysql.user WHERE User='root';" | grep -qv 'mysql_native_password'
 
 remove_test_database:
   cmd.run:
