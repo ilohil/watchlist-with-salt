@@ -41,7 +41,7 @@ This module performs the following tasks:
        $ sudo salt-call --local state.apply mariadb
        $ sudo salt-call --local state.apply phpmyadmin
 
- Or you can run them on minion:
+  Or you can run them on minion:
 
       $ sudo salt '{your minion}' state.apply mariadb
       $ sudo salt '{your minion}' state.apply phpmyadmin
@@ -50,7 +50,7 @@ This module performs the following tasks:
 
        $ mariadb -u {your username} -p'{your password}'
 
- If you want to use the user interface, go to the following address in your browser:
+  If you want to use the user interface, go to the following address in your browser:
 
     http://localhost/phpmyadmin/
     OR
