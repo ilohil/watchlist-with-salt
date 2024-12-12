@@ -23,32 +23,32 @@ This module performs the following tasks:
 
 ### Instructions
 
-Clone this repository to your preferred folder.
+1. Clone this repository to your preferred folder.
 
-    git clone https://github.com/ilohil/watchlist-with-salt.git
+       $ git clone https://github.com/ilohil/watchlist-with-salt.git
 
-Copy Salt-folder to your /srv-folder. Change the ownership to root.
+2. Copy Salt-folder to your /srv-folder. Change the ownership to root.
 
-    $ sudo cp -r salt/ /srv/
-    $ sudo chown -R root:root /srv/salt/
+       $ sudo cp -r salt/ /srv/
+       $ sudo chown -R root:root /srv/salt/
 
-If you want to, you can edit configure_mariadb.sls-file to set your preferred passwords and usernames. By default they are root (password: root) and admin (password: admin). Passwords are not safe in state files for production, so please use this project for test purposes only.
+3. If you want to, you can edit configure_mariadb.sls-file to set your preferred passwords and usernames. By default they are root (password: root) and admin (password: admin). Passwords are not safe in state files for production, so please use this project for test purposes only.
 
-    $ sudoedit /srv/salt/mariadb/configure_mariadb.sls
+       $ sudoedit /srv/salt/mariadb/configure_mariadb.sls
 
-Now you're ready to run the modules. Please run mariadb-module first as it setups the database for the user interface. You can run them locally:
+4. Now you're ready to run the modules. Please run mariadb-module first as it setups the database for the user interface. You can run them locally:
 
-    $ sudo salt-call --local state.apply mariadb
-    $ sudo salt-call --local state.apply phpmyadmin
+       $ sudo salt-call --local state.apply mariadb
+       $ sudo salt-call --local state.apply phpmyadmin
 
 Or you can run them on minion:
 
-    $ sudo salt '{your minion}' state.apply mariadb
-    $ sudo salt '{your minion}' state.apply phpmyadmin
+      $ sudo salt '{your minion}' state.apply mariadb
+      $ sudo salt '{your minion}' state.apply phpmyadmin
 
-After succesful runs you should be able to login to the database using command line or user interface. To use the command line:
+5. After succesful runs you should be able to login to the database using command line or user interface. To use the command line:
 
-    $ mariadb -u {your username} -p'{your password}'
+       $ mariadb -u {your username} -p'{your password}'
 
 If you want to use the user interface, go to the following address in your browser:
 
