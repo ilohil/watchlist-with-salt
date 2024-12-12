@@ -2,7 +2,7 @@
 
 This project involves creating a SaltStack module to automate the installation and configuration of MariaDB. MariaDB-module generates watchlistdb-database which is for storing a list of favorite movies and series. Phpmyadmin-module creates a simple user interface for the database.
 
-!(Picture of user interface)[phpmyadmin.png]
+![Picture of user interface](phpmyadmin.png)
 
 This module performs the following tasks:
 
